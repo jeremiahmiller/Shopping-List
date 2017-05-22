@@ -12,14 +12,12 @@ namespace ShoppingList.Models
         public int NoteId { get; set; }
         public int shoppingItemId { get; set; }
         public string Bodu { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd)", ApplyFormatInEditMode = true)]
+       
         [Display(Name = "Creation Date")]
         public DateTimeOffset CreatedUtc { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd)", ApplyFormatInEditMode = true)]
+       
         [Display(Name = "Edited Date")]
-        public DateTimeOffset ModifiedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
 
     }
 }

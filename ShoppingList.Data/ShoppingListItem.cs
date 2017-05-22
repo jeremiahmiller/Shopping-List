@@ -23,14 +23,12 @@ namespace ShoppingList.Models
         public string ListContent { get; set; }
         public Priority? Priority { get; set; }
         public bool IsChecked { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd)", ApplyFormatInEditMode = true)]
+       
         [Display(Name = "Creation Date")]
         public DateTimeOffset CreatedUtc { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd)", ApplyFormatInEditMode = true)]
+        
         [Display(Name = "Edited Date")]
-        public DateTimeOffset ModifiedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
 
 
     }
