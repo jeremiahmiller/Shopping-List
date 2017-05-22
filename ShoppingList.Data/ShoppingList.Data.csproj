@@ -107,6 +107,18 @@
     <Compile Include="Migrations\201705191318502_Seed2.Designer.cs">
       <DependentUpon>201705191318502_Seed2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705221411082_setup.cs" />
+    <Compile Include="Migrations\201705221411082_setup.Designer.cs">
+      <DependentUpon>201705221411082_setup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705221422199_ChangedModel.cs" />
+    <Compile Include="Migrations\201705221422199_ChangedModel.Designer.cs">
+      <DependentUpon>201705221422199_ChangedModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705221424599_ChangedListShoppingModel.cs" />
+    <Compile Include="Migrations\201705221424599_ChangedListShoppingModel.Designer.cs">
+      <DependentUpon>201705221424599_ChangedListShoppingModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,6 +137,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705191318502_Seed2.resx">
       <DependentUpon>201705191318502_Seed2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705221411082_setup.resx">
+      <DependentUpon>201705221411082_setup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705221422199_ChangedModel.resx">
+      <DependentUpon>201705221422199_ChangedModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705221424599_ChangedListShoppingModel.resx">
+      <DependentUpon>201705221424599_ChangedListShoppingModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
