@@ -37,10 +37,12 @@
                                     <tr>
                                         
                                         <th>
-                                            @Html.DisplayNameFor(model => model.ListContent)
+                                            @*@Html.DisplayNameFor(model => model.ListContent)*@
+                                            @Html.ActionLink("Content", "Index", new { sortOrder = ViewBag.NameSortParm })
                                         </th>
                                         <th>
-                                            @Html.DisplayNameFor(model => model.Priority)
+                                            @*@Html.DisplayNameFor(model => model.Priority)*@
+                                            @Html.ActionLink("Priority", "Index", new { sortOrder = ViewBag.PrioitySortParm })
                                         </th>
                                         <th>
                                             Note
