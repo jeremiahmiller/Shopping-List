@@ -119,6 +119,10 @@
     <Compile Include="Migrations\201705221424599_ChangedListShoppingModel.Designer.cs">
       <DependentUpon>201705221424599_ChangedListShoppingModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705231459173_Update.cs" />
+    <Compile Include="Migrations\201705231459173_Update.Designer.cs">
+      <DependentUpon>201705231459173_Update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -146,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705221424599_ChangedListShoppingModel.resx">
       <DependentUpon>201705221424599_ChangedListShoppingModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705231459173_Update.resx">
+      <DependentUpon>201705231459173_Update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
