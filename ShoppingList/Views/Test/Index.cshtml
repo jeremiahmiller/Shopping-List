@@ -9,44 +9,89 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.shoppingListId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ListContent)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Priority)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsChecked)
-        </th>
-       
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.shoppingListId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ListContent)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Priority)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsChecked)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.shoppingItemId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.shoppingItemId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.shoppingItemId })
-        </td>
-    </tr>
+<div class="container">
+    <div class="row">
+        <div class="">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-list"></span>@ViewBag.Title
+                    <div class="pull-right action-buttons">
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-cog" style="margin-right: 0px;"></span>
+                            </button>
+                            <ul class="dropdown-menu slidedown">
+                                <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-pencil"></span>Edit</a></li>
+                                <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-trash"></span>Delete</a></li>
+                                <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-flag"></span>Flag</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            
+                                <table class="table">
+                                    <tr>
+                                        
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.ListContent)
+                                        </th>
+                                        <th>
+                                            @Html.DisplayNameFor(model => model.Priority)
+                                        </th>
+                                        <th>
+                                            Note
+                                        </th>
+
+                                        <th></th>
+                                    </tr>
+
+
+                                    @foreach (var item in Model)
+                                    {
+                                     
+                                        <tr>
+
+                                            <td>
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="checkbox" />
+                                                    <label for="checkbox">
+                                                        @Html.DisplayFor(modelItem => item.ListContent)
+                                                    </label>
+                                                </div>
+                                            </td>
+                                         <td>
+                                                @Html.DisplayFor(modelItem => item.Priority)
+                                            </td>
+
+                                            <td>
+                                                <div class="pull-right action-buttons">
+                                                    <a href="@Url.Action("Edit", new { id = item.shoppingItemId } )"><span class="glyphicon glyphicon-pencil"></span></a>
+                                                    <a href="@Url.Action("Delete", new { id = item.shoppingItemId })" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
+                                                    <a href="@Url.Action("Details", new { id = item.shoppingItemId })" class="flag"><span class="glyphicon glyphicon-file"></span></a>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                    }
+                                </table>
+                            </li>
+                         </ul>
+
+                     </div>
+                </div>
+         </div>
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="btn btn-default">        
+        @Html.ActionLink("Delete List", "Delete")
+    </div>
 }
-
-</table>
