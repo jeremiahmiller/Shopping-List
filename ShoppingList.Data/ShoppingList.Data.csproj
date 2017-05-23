@@ -107,6 +107,10 @@
     <Compile Include="Migrations\201705191318502_Seed2.Designer.cs">
       <DependentUpon>201705191318502_Seed2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705221431167_Models.cs" />
+    <Compile Include="Migrations\201705221431167_Models.Designer.cs">
+      <DependentUpon>201705221431167_Models.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705191318502_Seed2.resx">
       <DependentUpon>201705191318502_Seed2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705221431167_Models.resx">
+      <DependentUpon>201705221431167_Models.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
