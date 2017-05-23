@@ -10,8 +10,7 @@ namespace ShoppingList.Models
         {
             Low,
             Medium,
-            High,
-            
+            High, 
         };
 
     public class ShoppingListItem
