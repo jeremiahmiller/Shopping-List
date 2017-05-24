@@ -56,10 +56,10 @@ textarea {
     color: rgb(128, 144, 160);
 }
 
-/*.list-group-item:hover, a.list-group-item:focus {
+.list-group-item:hover, a.list-group-item:focus {
     text-decoration: none;
     background-color: rgb(245, 245, 245);
-}*/
+}
 
 .list-group {
     margin-bottom: 0px;

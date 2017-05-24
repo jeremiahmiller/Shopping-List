@@ -16,8 +16,20 @@ namespace ShoppingList.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Test
-        public ActionResult Index()
+        public ActionResult Index(enum(Priority) sortOrder));
         {
+            ViewBag.PrioritySortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            var items = from s in db.ShoppingListItems
+                        select s;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    items = items.OrderByDescending(s => s.Priority?);
+                    break;
+                default:
+                    items = items.OrderBy(s => s.Priority);
+                    break;
+            }
             return View(db.ShoppingListItems.ToList());
         }
 
