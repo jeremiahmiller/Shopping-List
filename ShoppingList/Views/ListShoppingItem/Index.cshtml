@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<ShoppingList.Models.ShoppingListItem>
 
 
+
 @{
     ViewBag.Title = "Index";
 }
@@ -9,9 +10,6 @@
 
 <p>
     @Html.ActionLink("Create New", "Create" , new { id = ViewBag.id })
-    
-
-
 </p>
 
 <div class="container">
@@ -49,7 +47,7 @@
                                             @Html.ActionLink("Priority", "Index", new { sortOrder = ViewBag.PrioitySortParm })
                                         </th>
                                         <th>
-                                            Note
+                                            @Html.EditorFor(modelItem => model.Note)
                                         </th>
 
                                         <th></th>
