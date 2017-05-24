@@ -34,7 +34,11 @@ namespace ShoppingList.Controllers
             var service = CreateListService();
             var model = service.GetShoppingListItems(id);
 
+             
+
+
             ViewBag.id = id;
+            ViewBag.Url = Request.UrlReferrer;
 
             return View(model);
 
@@ -166,9 +170,25 @@ namespace ShoppingList.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             ShoppingListItem shoppingListItem = db.ShoppingListItems.Find(id);
-            db.ShoppingListItems.Remove(shoppingListItem);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            var items = db.ShoppingListItems.Where(i => i.shoppingItemId == id);
+
+            using (var context = new ApplicationDbContext())
+            {
+
+                var query = from b in context.ShoppingListItems
+                            where b.shoppingItemId == id
+                            select b.shoppingListId;
+
+                var list = query.ToList();
+                int anotherId = list.ElementAt(0);
+
+                db.ShoppingListItems.Remove(shoppingListItem);
+                db.SaveChanges();
+
+                return RedirectToAction("Index", new { id = anotherId });
+
+            }          
+            
         }
 
         protected override void Dispose(bool disposing)
