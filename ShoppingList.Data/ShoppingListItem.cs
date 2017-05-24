@@ -22,7 +22,6 @@ namespace ShoppingList.Models
         public int shoppingListId { get; set; }
         public string ListContent { get; set; }
         public Priority? Priority { get; set; }
-        public bool IsChecked { get; set; }
 
        
         [Display(Name = "Creation Date")]
