@@ -23,6 +23,12 @@ textarea {
     max-width: 280px;
 }
 
+<<<<<<< HEAD
+=======
+
+/* BootSnip*/
+
+>>>>>>> b213295eddc5b8350c472b9c0f7722e64cfc7a79
 .trash {
     color: rgb(209, 91, 71);
 }
@@ -53,11 +59,29 @@ textarea {
     color: rgb(128, 144, 160);
 }
 
+<<<<<<< HEAD
 .list-group-item:hover, a.list-group-item:focus {
     text-decoration: none;
     background-color: rgb(245, 245, 245);
 }
+=======
+/*.list-group-item:hover, a.list-group-item:focus {
+    text-decoration: none;
+    background-color: rgb(245, 245, 245);
+}*/
+>>>>>>> b213295eddc5b8350c472b9c0f7722e64cfc7a79
 
 .list-group {
     margin-bottom: 0px;
 }
+<<<<<<< HEAD
+=======
+
+.panel-heading {
+    background-color: #e8484f;
+}
+
+/*.container {
+    background-image: url("http://68.media.tumblr.com/tumblr_m8aj4vq8AA1r6bchgo1_1280.jpg");
+}*/
+>>>>>>> b213295eddc5b8350c472b9c0f7722e64cfc7a79
