@@ -91,13 +91,9 @@
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
     <Compile Include="ListInitializer.cs" />
-    <Compile Include="Migrations\201705240042336_Test.cs" />
-    <Compile Include="Migrations\201705240042336_Test.Designer.cs">
-      <DependentUpon>201705240042336_Test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705240138597_nullable.cs" />
-    <Compile Include="Migrations\201705240138597_nullable.Designer.cs">
-      <DependentUpon>201705240138597_nullable.cs</DependentUpon>
+    <Compile Include="Migrations\201705240302407_SetUp.cs" />
+    <Compile Include="Migrations\201705240302407_SetUp.Designer.cs">
+      <DependentUpon>201705240302407_SetUp.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
@@ -106,11 +102,8 @@
     <Compile Include="ShoppingListItem.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705240042336_Test.resx">
-      <DependentUpon>201705240042336_Test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705240138597_nullable.resx">
-      <DependentUpon>201705240138597_nullable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705240302407_SetUp.resx">
+      <DependentUpon>201705240302407_SetUp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

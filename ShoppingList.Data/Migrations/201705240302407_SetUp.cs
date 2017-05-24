@@ -3,7 +3,7 @@ namespace ShoppingList.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Test : DbMigration
+    public partial class SetUp : DbMigration
     {
         public override void Up()
         {
