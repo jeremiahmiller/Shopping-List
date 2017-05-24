@@ -91,17 +91,9 @@
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
     <Compile Include="ListInitializer.cs" />
-    <Compile Include="Migrations\201705240302407_SetUp.cs" />
-    <Compile Include="Migrations\201705240302407_SetUp.Designer.cs">
-      <DependentUpon>201705240302407_SetUp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705221412577_setup.cs" />
-    <Compile Include="Migrations\201705221412577_setup.Designer.cs">
-      <DependentUpon>201705221412577_setup.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705221651527_viewUpdate.cs" />
-    <Compile Include="Migrations\201705221651527_viewUpdate.Designer.cs">
-      <DependentUpon>201705221651527_viewUpdate.cs</DependentUpon>
+    <Compile Include="Migrations\201705241401502_SetUp.cs" />
+    <Compile Include="Migrations\201705241401502_SetUp.Designer.cs">
+      <DependentUpon>201705241401502_SetUp.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
@@ -110,14 +102,8 @@
     <Compile Include="ShoppingListItem.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705240302407_SetUp.resx">
-      <DependentUpon>201705240302407_SetUp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705221412577_setup.resx">
-      <DependentUpon>201705221412577_setup.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705221651527_viewUpdate.resx">
-      <DependentUpon>201705221651527_viewUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705241401502_SetUp.resx">
+      <DependentUpon>201705241401502_SetUp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

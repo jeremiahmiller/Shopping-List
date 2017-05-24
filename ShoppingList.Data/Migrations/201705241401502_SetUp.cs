@@ -15,7 +15,7 @@ namespace ShoppingList.Data.Migrations
                         shoppingItemId = c.Int(nullable: false),
                         Bodu = c.String(),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.NoteId);
             
