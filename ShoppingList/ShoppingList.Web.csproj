@@ -190,8 +190,9 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListShoppingController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\ListShoppingItemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -203,6 +204,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\grocery.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -259,11 +261,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Test\Create.cshtml" />
-    <Content Include="Views\Test\Delete.cshtml" />
-    <Content Include="Views\Test\Details.cshtml" />
-    <Content Include="Views\Test\Edit.cshtml" />
-    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\ListShoppingItem\Create.cshtml" />
+    <Content Include="Views\ListShoppingItem\Delete.cshtml" />
+    <Content Include="Views\ListShoppingItem\Details.cshtml" />
+    <Content Include="Views\ListShoppingItem\Edit.cshtml" />
+    <Content Include="Views\ListShoppingItem\Index.cshtml" />
+    <Content Include="Views\ListShopping\Create.cshtml" />
+    <Content Include="Views\ListShopping\Delete.cshtml" />
+    <Content Include="Views\ListShopping\Details.cshtml" />
+    <Content Include="Views\ListShopping\Edit.cshtml" />
+    <Content Include="Views\ListShopping\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -287,6 +294,10 @@
     <ProjectReference Include="..\ShoppingList.Data\ShoppingList.Data.csproj">
       <Project>{e544970e-15e1-4abe-8a46-b2fe48644999}</Project>
       <Name>ShoppingList.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShoppingList.Services\ShoppingList.Services.csproj">
+      <Project>{bd175abd-db76-45cb-b6bc-972421c5432c}</Project>
+      <Name>ShoppingList.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

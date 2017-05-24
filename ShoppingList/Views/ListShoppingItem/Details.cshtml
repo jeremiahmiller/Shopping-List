@@ -1,0 +1,58 @@
+﻿@model ShoppingList.Models.ShoppingListItem
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ShoppingListItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.shoppingListId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.shoppingListId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ListContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ListContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Priority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Priority)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUtc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.shoppingItemId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

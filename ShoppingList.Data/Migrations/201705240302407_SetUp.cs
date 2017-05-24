@@ -3,7 +3,7 @@ namespace ShoppingList.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class SetUp : DbMigration
     {
         public override void Up()
         {
@@ -52,7 +52,7 @@ namespace ShoppingList.Data.Migrations
                         Priority = c.Int(),
                         IsChecked = c.Boolean(nullable: false),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.shoppingItemId);
             
@@ -65,7 +65,7 @@ namespace ShoppingList.Data.Migrations
                         ListName = c.String(nullable: false),
                         Color = c.String(),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.shoppingListId);
             

@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<ShoppingList.Models.ShoppingListItem>
 
+
 @{
     ViewBag.Title = "Index";
 }
@@ -7,7 +8,10 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create" , new { id = ViewBag.id })
+    
+
+
 </p>
 
 <div class="container">
@@ -37,10 +41,14 @@
                                     <tr>
                                         
                                         <th>
-                                            @Html.DisplayNameFor(model => model.ListContent)
+                                            @*@Html.DisplayNameFor(model => model.ListContent)*@
+                                            @Html.ActionLink("Content", "Index", new { sortOrder = ViewBag.NameSortParm })
                                         </th>
                                         <th>
-                                            @Html.ActionLink("Priority", "Index", new { sortOrder = ViewBag.NameSortPam })
+
+
+                                            @*@Html.DisplayNameFor(model => model.Priority)*@
+                                            @Html.ActionLink("Priority", "Index", new { sortOrder = ViewBag.PrioitySortParm })
                                         </th>
                                         <th>
                                             Note
@@ -71,7 +79,7 @@
                                                 <div class="pull-right action-buttons">
                                                     <a href="@Url.Action("Edit", new { id = item.shoppingItemId } )"><span class="glyphicon glyphicon-pencil"></span></a>
                                                     <a href="@Url.Action("Delete", new { id = item.shoppingItemId })" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
-                                                    <a href="@Url.Action("Details", new { id = item.shoppingItemId })" class="flag"><span class="glyphicon glyphicon-file"></span></a>
+                                                    <a href="@Url.Action("Details", new { id = item.shoppingItemId })" class="flag"><span class="glyphicon glyphicon-file"></span></a>                                                    
                                                 </div>
 
                                             </td>
