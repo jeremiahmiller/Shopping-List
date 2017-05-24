@@ -38,9 +38,9 @@
        
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.shoppingListId }) |            
-            @Html.ActionLink("Details", "Test", new { id=item.shoppingListId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.shoppingListId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.shoppingListId }) |
-            <a href="@Url.Action("Index", "Test" ,new { id = item.shoppingListId } )"><span>Go To List</span></a>
+            <a href="@Url.Action("Index", "ListShoppingItem" ,new { id = item.shoppingListId } )"><span>Go To List</span></a>
         </td>
     </tr>
 }

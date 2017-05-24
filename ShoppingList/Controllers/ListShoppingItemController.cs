@@ -13,7 +13,7 @@ using Microsoft.AspNet.Identity;
 
 namespace ShoppingList.Controllers
 {
-    public class TestController : Controller
+    public class ListShoppingItemController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
