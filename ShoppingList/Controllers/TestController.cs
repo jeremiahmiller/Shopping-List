@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using ShoppingList.Data;
 using ShoppingList.Models;
+using ShoppingList.Services;
+using Microsoft.AspNet.Identity;
 
 namespace ShoppingList.Controllers
 {
@@ -15,9 +17,29 @@ namespace ShoppingList.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Test
-        public ActionResult Index(string sortOrder)
+        private ListService CreateListService()
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+
+            var service = new ListService(userId);
+            return service;
+        }
+
+
+        // GET: Test
+        public ActionResult Index(string sortOrder, int id)
+        {
+
+
+            var service = CreateListService();
+            var model = service.GetShoppingListItems(id);
+
+            ViewBag.id = id;
+
+            return View(model);
+
+
+
             ViewBag.PrioitySortParm = String.IsNullOrEmpty(sortOrder) ? "prioity" : "";
             ViewBag.NameSortParm = sortOrder == "Name" ? "name_desc" : "Name";
 
@@ -58,9 +80,11 @@ namespace ShoppingList.Controllers
         }
 
         // GET: Test/Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
             return View();
+          
+
         }
 
         // POST: Test/Create
@@ -68,16 +92,25 @@ namespace ShoppingList.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "shoppingItemId,shoppingListId,ListContent,Priority,IsChecked,CreatedUtc,ModifiedUtc")] ShoppingListItem shoppingListItem)
+        public ActionResult Create(ShoppingListItem model, int id)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+
+            var service = CreateListService();
+
+            if (service.CreateListItem(model, id))
             {
-                db.ShoppingListItems.Add(shoppingListItem);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                //TempData is a dictionary that displays text per user in view then is removed only displaying the 
+                //Value of the key
+                TempData["SaveResult"] = "Your note was created";
+                //TODO WHY COULDN'T YOU DO RETURN View(Index)
+                return RedirectToAction("Index", new { id = id });
             }
 
-            return View(shoppingListItem);
+            //If it fails the ModelState.AddModelError would display that the note was not created in the validation summary
+            ModelState.AddModelError("", "Your note could not be create.");
+            return View(model);
+
         }
 
         // GET: Test/Edit/5
@@ -105,6 +138,7 @@ namespace ShoppingList.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(shoppingListItem).State = EntityState.Modified;
+                
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

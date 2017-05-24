@@ -7,13 +7,13 @@ namespace ShoppingList.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Seed : IMigrationMetadata
+    public sealed partial class nullable : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Seed));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(nullable));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705182135541_Seed"; }
+            get { return "201705240138597_nullable"; }
         }
         
         string IMigrationMetadata.Source

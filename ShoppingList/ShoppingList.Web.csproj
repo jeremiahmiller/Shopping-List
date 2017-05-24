@@ -190,6 +190,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListShoppingController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
@@ -265,6 +266,11 @@
     <Content Include="Views\Test\Details.cshtml" />
     <Content Include="Views\Test\Edit.cshtml" />
     <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\ListShopping\Create.cshtml" />
+    <Content Include="Views\ListShopping\Delete.cshtml" />
+    <Content Include="Views\ListShopping\Details.cshtml" />
+    <Content Include="Views\ListShopping\Edit.cshtml" />
+    <Content Include="Views\ListShopping\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -288,6 +294,10 @@
     <ProjectReference Include="..\ShoppingList.Data\ShoppingList.Data.csproj">
       <Project>{e544970e-15e1-4abe-8a46-b2fe48644999}</Project>
       <Name>ShoppingList.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShoppingList.Services\ShoppingList.Services.csproj">
+      <Project>{bd175abd-db76-45cb-b6bc-972421c5432c}</Project>
+      <Name>ShoppingList.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

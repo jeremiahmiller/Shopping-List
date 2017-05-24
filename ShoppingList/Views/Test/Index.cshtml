@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<ShoppingList.Models.ShoppingListItem>
 
+
 @{
     ViewBag.Title = "Index";
 }
@@ -7,7 +8,10 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create" , new { id = ViewBag.id })
+    
+
+
 </p>
 
 <div class="container">
@@ -74,6 +78,7 @@
                                                     <a href="@Url.Action("Edit", new { id = item.shoppingItemId } )"><span class="glyphicon glyphicon-pencil"></span></a>
                                                     <a href="@Url.Action("Delete", new { id = item.shoppingItemId })" class="trash"><span class="glyphicon glyphicon-trash"></span></a>
                                                     <a href="@Url.Action("Details", new { id = item.shoppingItemId })" class="flag"><span class="glyphicon glyphicon-file"></span></a>
+                                                    <a href="@Url.Action("Create", new { id = item.shoppingItemId })" class="flag"><span class="glyphicon glyphicon-file"></span></a>
                                                 </div>
 
                                             </td>
