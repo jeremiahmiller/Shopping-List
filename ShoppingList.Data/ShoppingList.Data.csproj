@@ -91,9 +91,9 @@
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
     <Compile Include="ListInitializer.cs" />
-    <Compile Include="Migrations\201705251402516_NewDB.cs" />
-    <Compile Include="Migrations\201705251402516_NewDB.Designer.cs">
-      <DependentUpon>201705251402516_NewDB.cs</DependentUpon>
+    <Compile Include="Migrations\201705251423167_Model.cs" />
+    <Compile Include="Migrations\201705251423167_Model.Designer.cs">
+      <DependentUpon>201705251423167_Model.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
@@ -102,8 +102,8 @@
     <Compile Include="ShoppingListItem.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705251402516_NewDB.resx">
-      <DependentUpon>201705251402516_NewDB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705251423167_Model.resx">
+      <DependentUpon>201705251423167_Model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -28,6 +28,18 @@ namespace ShoppingList.Controllers
             var model = service.GetShoppingListItems(id);
             ViewBag.id = id;
             //return View(model)
+
+
+             
+
+
+            ViewBag.id = id;
+            ViewBag.Url = Request.UrlReferrer;
+
+            return View(model);
+
+
+
             ViewBag.PrioitySortParm = String.IsNullOrEmpty(sortOrder) ? "prioity" : "";
             ViewBag.NameSortParm = sortOrder == "Name" ? "name_desc" : "Name";
             var items = from s in model
@@ -109,14 +121,27 @@ namespace ShoppingList.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "shoppingItemId,shoppingListId,ListContent,Priority,NoteContent,CreatedUtc,ModifiedUtc")] ShoppingListItem shoppingListItem)
+        public ActionResult Edit([Bind(Include = "shoppingItemId,shoppingListId,ListContent,Priority,IsChecked,CreatedUtc,ModifiedUtc")] ShoppingListItem shoppingListItem, int id)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(shoppingListItem).State = EntityState.Modified;
 
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                using (var context = new ApplicationDbContext())
+                {
+
+                    var query = from b in context.ShoppingListItems
+                                where b.shoppingItemId == id
+                                select b.shoppingListId;
+
+                    var list = query.ToList();
+                    int anotherId = list.ElementAt(0);                    
+                    return RedirectToAction("Index", new { id = anotherId });
+
+                }                
+                
             }
             return View(shoppingListItem);
         }
@@ -140,9 +165,24 @@ namespace ShoppingList.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             ShoppingListItem shoppingListItem = db.ShoppingListItems.Find(id);
-            db.ShoppingListItems.Remove(shoppingListItem);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            var items = db.ShoppingListItems.Where(i => i.shoppingItemId == id);
+
+            using (var context = new ApplicationDbContext())
+            {
+
+                var query = from b in context.ShoppingListItems
+                            where b.shoppingItemId == id
+                            select b.shoppingListId;
+
+                var list = query.ToList();
+                int anotherId = list.ElementAt(0);
+
+                db.ShoppingListItems.Remove(shoppingListItem);
+                db.SaveChanges();
+
+                return RedirectToAction("Index", new { id = anotherId });
+
+            }                      
         }
         protected override void Dispose(bool disposing)
         {
