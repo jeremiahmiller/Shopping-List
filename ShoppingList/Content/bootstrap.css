@@ -4501,7 +4501,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: lightgray;
+  background-color: #6fb6de;
   border-color: transparent;
 }
 
@@ -5326,7 +5326,7 @@ a.list-group-item:focus {
 
 .panel {
   margin-bottom: 20px;
-  background-color: rgba(50,50,50,0.1);
+  background-color: rgba(255,255,255,0.8);
   border: 1px solid transparent;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -5461,7 +5461,7 @@ a.list-group-item:focus {
 
 .panel-primary > .panel-heading {
   color: black;
-  background-color: lightgray;
+  background-color: #6fb6de;
   border-color: transparent;
 }
 
