@@ -1,6 +1,5 @@
 namespace ShoppingList.Data.Migrations
 {
-    using ShoppingList.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -11,19 +10,22 @@ namespace ShoppingList.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "ShoppingList.Data.ApplicationDbContext";
         }
 
         protected override void Seed(ShoppingList.Data.ApplicationDbContext context)
         {
-            //context.ShoppingLists.AddOrUpdate(x => x.shoppingListId,
-            //    new ListShopping() { shoppingListId = 1, ListName = "Grocery", Color = "#FFFFFF" });
+            //  This method will be called after migrating to the latest version.
 
-            //context.ShoppingListItems.AddOrUpdate(x => x.shoppingItemId,
-            //    new ShoppingListItem { shoppingItemId = 1, shoppingListId = 1, ListContent = "Eggs", Priority = Priority.Low },
-            //    new ShoppingListItem { shoppingItemId = 2, shoppingListId = 1, ListContent = "bacon", Priority = Priority.High },
-            //    new ShoppingListItem { shoppingItemId = 3, shoppingListId = 1, ListContent = "grits", Priority = Priority.Medium },
-            //    new ShoppingListItem { shoppingItemId = 4, shoppingListId = 1, ListContent = "sausage", Priority = Priority.Low });
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
+            //  to avoid creating duplicate seed data. E.g.
+            //
+            //    context.People.AddOrUpdate(
+            //      p => p.FullName,
+            //      new Person { FullName = "Andrew Peters" },
+            //      new Person { FullName = "Brice Lambson" },
+            //      new Person { FullName = "Rowan Miller" }
+            //    );
+            //
         }
     }
 }
