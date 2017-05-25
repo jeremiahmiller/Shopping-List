@@ -15,7 +15,8 @@ namespace ShoppingList.Controllers
 {
     public class ListShoppingController : Controller
     {
-        
+
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         private ListService CreateListService()
         {
@@ -130,31 +131,31 @@ namespace ShoppingList.Controllers
         //    return View(listShopping);
         //}
 
-        // GET: ListShopping/Delete/5
-        //public ActionResult Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    ListShopping listShopping = db.ShoppingLists.Find(id);
-        //    if (listShopping == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(listShopping);
-        //}
+        //GET: ListShopping/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ListShopping listShopping = db.ShoppingLists.Find(id);
+            if (listShopping == null)
+            {
+                return HttpNotFound();
+            }
+            return View(listShopping);
+        }
 
-        // POST: ListShopping/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    ListShopping listShopping = db.ShoppingLists.Find(id);
-        //    db.ShoppingLists.Remove(listShopping);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
+        //POST: ListShopping/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            ListShopping listShopping = db.ShoppingLists.Find(id);
+            db.ShoppingLists.Remove(listShopping);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
 
     }
