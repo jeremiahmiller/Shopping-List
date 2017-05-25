@@ -54,6 +54,7 @@ namespace ShoppingList.Services
                 ListContent = model.ListContent,
                 Priority = model.Priority,
                 IsChecked = model.IsChecked,
+                NoteContent = model.NoteContent,
                 CreatedUtc = DateTimeOffset.UtcNow
             };
 
