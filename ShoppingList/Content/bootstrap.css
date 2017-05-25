@@ -5461,7 +5461,7 @@ a.list-group-item:focus {
 
 .panel-primary > .panel-heading {
   color: black;
-  background-color: #6fb6de;
+  background-color: white;
   border-color: transparent;
 }
 
