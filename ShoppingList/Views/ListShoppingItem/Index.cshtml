@@ -43,6 +43,7 @@
                                             @Html.ActionLink("Content", "Index", new { sortOrder = ViewBag.NameSortParm })
                                         </th>
                                         <th>
+
                                             @*@Html.DisplayNameFor(model => model.Priority)*@
                                             @Html.ActionLink("Priority", "Index", new { sortOrder = ViewBag.PrioitySortParm })
                                         </th>
@@ -67,12 +68,13 @@
                                                     </label>
                                                 </div>
                                             </td>
-                                         <td>
+                                            <td>
                                                 @Html.DisplayFor(modelItem => item.Priority)
                                             </td>
-                                            <td>
-                                                @Html.DisplayFor(modelItem => item.NoteContent)
-                                            </td>
+                                         <td>
+                                                @Html.DisplayFor(modelItem => item.NoteContent)                                            
+                                         </td>
+                                           
 
                                             <td>
                                                 <div class="pull-right action-buttons">
@@ -99,6 +101,6 @@
     @Html.AntiForgeryToken()
 
     <div class="btn btn-default">        
-        @Html.ActionLink("Delete List", "Delete")
+        <a class="btn btn-default" href="@Url.Action("Delete", "ListShopping", new { id = ViewBag.id })">Delete</a>
     </div>
 }

@@ -10,29 +10,25 @@ using ShoppingList.Data;
 using ShoppingList.Models;
 using ShoppingList.Services;
 using Microsoft.AspNet.Identity;
-
 namespace ShoppingList.Controllers
 {
     public class ListShoppingItemController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
-
         private ListService CreateListService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-
             var service = new ListService(userId);
             return service;
         }
-
-
         // GET: Test
         public ActionResult Index(string sortOrder, int id)
         {
-
-
             var service = CreateListService();
             var model = service.GetShoppingListItems(id);
+            ViewBag.id = id;
+            //return View(model)
+
 
              
 
@@ -40,16 +36,13 @@ namespace ShoppingList.Controllers
             ViewBag.id = id;
             ViewBag.Url = Request.UrlReferrer;
 
-            return View(model);
 
 
 
             ViewBag.PrioitySortParm = String.IsNullOrEmpty(sortOrder) ? "prioity" : "";
             ViewBag.NameSortParm = sortOrder == "Name" ? "name_desc" : "Name";
-
-            var items = from s in db.ShoppingListItems
+            var items = from s in model
                         select s;
-
             switch (sortOrder)
             {
                 case "prioity":
@@ -67,7 +60,6 @@ namespace ShoppingList.Controllers
             }
             return View(items.ToList());
         }
-
         // GET: Test/Details/5
         public ActionResult Details(int? id)
         {
@@ -82,15 +74,12 @@ namespace ShoppingList.Controllers
             }
             return View(shoppingListItem);
         }
-
         // GET: Test/Create
         public ActionResult Create(int id)
         {
             return View();
-          
 
         }
-
         // POST: Test/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -99,9 +88,7 @@ namespace ShoppingList.Controllers
         public ActionResult Create(ShoppingListItem model, int id)
         {
             if (!ModelState.IsValid) return View(model);
-
             var service = CreateListService();
-
             if (service.CreateListItem(model, id))
             {
                 //TempData is a dictionary that displays text per user in view then is removed only displaying the 
@@ -110,13 +97,10 @@ namespace ShoppingList.Controllers
                 //TODO WHY COULDN'T YOU DO RETURN View(Index)
                 return RedirectToAction("Index", new { id = id });
             }
-
             //If it fails the ModelState.AddModelError would display that the note was not created in the validation summary
             ModelState.AddModelError("", "Your note could not be create.");
             return View(model);
-
         }
-
         // GET: Test/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -131,7 +115,6 @@ namespace ShoppingList.Controllers
             }
             return View(shoppingListItem);
         }
-
         // POST: Test/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -142,7 +125,7 @@ namespace ShoppingList.Controllers
             if (ModelState.IsValid)
             {
                 db.Entry(shoppingListItem).State = EntityState.Modified;
-                
+
                 db.SaveChanges();
 
                 using (var context = new ApplicationDbContext())
@@ -161,7 +144,6 @@ namespace ShoppingList.Controllers
             }
             return View(shoppingListItem);
         }
-
         // GET: Test/Delete/5
         public ActionResult Delete(int? id)
         {
@@ -176,7 +158,6 @@ namespace ShoppingList.Controllers
             }
             return View(shoppingListItem);
         }
-
         // POST: Test/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -202,7 +183,6 @@ namespace ShoppingList.Controllers
 
             }                      
         }
-
         protected override void Dispose(bool disposing)
         {
             if (disposing)
