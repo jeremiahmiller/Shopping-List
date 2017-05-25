@@ -42,11 +42,11 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.IsChecked, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.NoteContent, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.IsChecked)
-                    @Html.ValidationMessageFor(model => model.IsChecked, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.NoteContent)
+                    @Html.ValidationMessageFor(model => model.NoteContent, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>

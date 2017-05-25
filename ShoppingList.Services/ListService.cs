@@ -53,6 +53,7 @@ namespace ShoppingList.Services
                 shoppingListId = id,
                 ListContent = model.ListContent,
                 Priority = model.Priority,
+                NoteContent = model.NoteContent,
                 CreatedUtc = DateTimeOffset.UtcNow
             };
 

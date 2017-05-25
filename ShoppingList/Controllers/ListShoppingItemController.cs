@@ -109,7 +109,7 @@ namespace ShoppingList.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "shoppingItemId,shoppingListId,ListContent,Priority,IsChecked,CreatedUtc,ModifiedUtc")] ShoppingListItem shoppingListItem)
+        public ActionResult Edit([Bind(Include = "shoppingItemId,shoppingListId,ListContent,Priority,NoteContent,CreatedUtc,ModifiedUtc")] ShoppingListItem shoppingListItem)
         {
             if (ModelState.IsValid)
             {

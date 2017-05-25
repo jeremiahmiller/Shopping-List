@@ -21,6 +21,7 @@ namespace ShoppingList.Models
         public int shoppingItemId { get; set; }
         public int shoppingListId { get; set; }
         public string ListContent { get; set; }
+        public string NoteContent { get; set; }
         public Priority? Priority { get; set; }
 
        

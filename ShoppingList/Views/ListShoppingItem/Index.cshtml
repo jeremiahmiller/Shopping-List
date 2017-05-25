@@ -46,7 +46,6 @@
                                         </th>
                                         <th>
 
-
                                             @*@Html.DisplayNameFor(model => model.Priority)*@
                                             @Html.ActionLink("Priority", "Index", new { sortOrder = ViewBag.PrioitySortParm })
                                         </th>
@@ -70,6 +69,9 @@
                                                         @Html.DisplayFor(modelItem => item.ListContent)
                                                     </label>
                                                 </div>
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.NoteContent)
                                             </td>
                                          <td>
                                                 @Html.DisplayFor(modelItem => item.Priority)
