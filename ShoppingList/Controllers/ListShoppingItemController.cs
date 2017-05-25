@@ -36,7 +36,6 @@ namespace ShoppingList.Controllers
             ViewBag.id = id;
             ViewBag.Url = Request.UrlReferrer;
 
-            return View(model);
 
 
 
