@@ -3,7 +3,7 @@ namespace ShoppingList.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class SetUp : DbMigration
+    public partial class Update : DbMigration
     {
         public override void Up()
         {
@@ -14,6 +14,7 @@ namespace ShoppingList.Data.Migrations
                         NoteId = c.Int(nullable: false, identity: true),
                         shoppingItemId = c.Int(nullable: false),
                         Bodu = c.String(),
+                        Body = c.String(),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
@@ -49,6 +50,7 @@ namespace ShoppingList.Data.Migrations
                         shoppingItemId = c.Int(nullable: false, identity: true),
                         shoppingListId = c.Int(nullable: false),
                         ListContent = c.String(),
+                        NoteContent = c.String(),
                         Priority = c.Int(),
                         IsChecked = c.Boolean(nullable: false),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),

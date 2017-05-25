@@ -91,9 +91,9 @@
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
     <Compile Include="ListInitializer.cs" />
-    <Compile Include="Migrations\201705241401502_SetUp.cs" />
-    <Compile Include="Migrations\201705241401502_SetUp.Designer.cs">
-      <DependentUpon>201705241401502_SetUp.cs</DependentUpon>
+    <Compile Include="Migrations\201705251530464_Update.cs" />
+    <Compile Include="Migrations\201705251530464_Update.Designer.cs">
+      <DependentUpon>201705251530464_Update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
@@ -102,8 +102,8 @@
     <Compile Include="ShoppingListItem.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705241401502_SetUp.resx">
-      <DependentUpon>201705241401502_SetUp.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705251530464_Update.resx">
+      <DependentUpon>201705251530464_Update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
