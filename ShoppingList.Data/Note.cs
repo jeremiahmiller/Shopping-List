@@ -11,6 +11,8 @@ namespace ShoppingList.Models
         [Key]
         public int NoteId { get; set; }
         public int shoppingItemId { get; set; }
+        public string Bodu { get; set; }
+       
         public string Body { get; set; }
       
         [DataType(DataType.Date)]
@@ -19,7 +21,7 @@ namespace ShoppingList.Models
         public DateTimeOffset CreatedUtc { get; set; }
        
         [Display(Name = "Edited Date")]
-        public DateTimeOffset ModifiedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
 
     }
 }

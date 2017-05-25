@@ -314,8 +314,8 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333333;
-  background-color: #ffffff;
+  color: black;
+  background-image: url(groceries.jpeg);
 }
 
 input,
@@ -2049,9 +2049,9 @@ fieldset[disabled] .btn {
 }
 
 .btn-default {
-  color: #333333;
-  background-color: #ffffff;
-  border-color: #cccccc;
+  color: black;
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .btn-default:hover,
@@ -2090,9 +2090,9 @@ fieldset[disabled] .btn-default.active {
 }
 
 .btn-primary {
-  color: #ffffff;
-  background-color: #428bca;
-  border-color: #357ebd;
+  color: black;
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .btn-primary:hover,
@@ -4501,12 +4501,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
-  border-color: #080808;
+  background-color: #6fb6de;
+  border-color: transparent;
 }
 
 .navbar-inverse .navbar-brand {
-  color: #999999;
+  color: black;
 }
 
 .navbar-inverse .navbar-brand:hover,
@@ -4520,7 +4520,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #999999;
+  color: black;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
@@ -4933,13 +4933,13 @@ a.list-group-item.active > .badge,
   font-size: 21px;
   font-weight: 200;
   line-height: 2.1428571435;
-  color: inherit;
-  background-color: #eeeeee;
+  color: black;
+  background-color: transparent;
 }
 
 .jumbotron h1 {
   line-height: 1;
-  color: inherit;
+  color: black;
 }
 
 .jumbotron p {
@@ -5257,8 +5257,7 @@ a.thumbnail:focus {
   display: block;
   padding: 10px 15px;
   margin-bottom: -1px;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
+  background-color: transparent;
 }
 
 .list-group-item:first-child {
@@ -5327,7 +5326,7 @@ a.list-group-item:focus {
 
 .panel {
   margin-bottom: 20px;
-  background-color: #ffffff;
+  background-color: rgba(255,255,255,0.8);
   border: 1px solid transparent;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -5457,13 +5456,13 @@ a.list-group-item:focus {
 }
 
 .panel-primary {
-  border-color: #428bca;
+  border-color: transparent;
 }
 
 .panel-primary > .panel-heading {
-  color: #ffffff;
-  background-color: #428bca;
-  border-color: #428bca;
+  color: black;
+  background-color: white;
+  border-color: transparent;
 }
 
 .panel-primary > .panel-heading + .panel-collapse .panel-body {

@@ -15,10 +15,16 @@ namespace ShoppingList.Models
         [Display(Name = "Shopping List")]
         public string ListName { get; set; }
         public string Color { get; set; }
-        
+
+       
         [Display(Name = "Creation Date")]
         public DateTimeOffset CreatedUtc { get; set; }
+       
+
         
+        
+        
+
         [Display(Name = "Edited Date")]
         public DateTimeOffset? ModifiedUtc { get; set; }
 

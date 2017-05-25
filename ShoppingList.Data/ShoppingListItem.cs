@@ -10,8 +10,7 @@ namespace ShoppingList.Models
         {
             Low,
             Medium,
-            High,
-            
+            High, 
         };
 
     public class ShoppingListItem
@@ -25,11 +24,11 @@ namespace ShoppingList.Models
         public bool IsChecked { get; set; }
         public Priority? Priority { get; set; }
 
+            
        
         [Display(Name = "Creation Date")]
         public DateTimeOffset CreatedUtc { get; set; }
         
-       
         [Display(Name = "Edited Date")]
         public DateTimeOffset? ModifiedUtc { get; set; }
 
