@@ -53,7 +53,7 @@ namespace ShoppingList.Controllers
             switch (sortOrder)
             {
                 case "prioity":
-                    items = items.OrderBy(s => s.Priority);
+                    items = items.OrderByDescending(s => s.Priority);
                     break;
                 case "Name":
                     items = items.OrderBy(s => s.ListContent);
@@ -62,7 +62,7 @@ namespace ShoppingList.Controllers
                     items = items.OrderByDescending(s => s.ListContent);
                     break;
                 default:
-                    items = items.OrderByDescending(s => s.Priority);
+                    items = items.OrderBy(s => s.Priority);
                     break;
             }
             return View(items.ToList());
