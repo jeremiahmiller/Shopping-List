@@ -15,7 +15,8 @@ namespace ShoppingList.Controllers
 {
     public class ListShoppingController : Controller
     {
-        
+
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         private ListService CreateListService()
         {
@@ -54,22 +55,21 @@ namespace ShoppingList.Controllers
 
 
         // GET: ListShopping/Details/5
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    ListShopping listShopping = db.ShoppingLists.Find(id);
-        //    if (listShopping == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(listShopping);
-        //}
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ListShopping listShopping = db.ShoppingLists.Find(id);
+            if (listShopping == null)
+            {
+                return HttpNotFound();
+            }
+            return View(listShopping);
+        }
 
-  
+
 
         // POST: ListShopping/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -99,62 +99,60 @@ namespace ShoppingList.Controllers
 
 
         // GET: ListShopping/Edit/5
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    ListShopping listShopping = db.ShoppingLists.Find(id);
-        //    if (listShopping == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(listShopping);
-        //}
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ListShopping listShopping = db.ShoppingLists.Find(id);
+            if (listShopping == null)
+            {
+                return HttpNotFound();
+            }
+            return View(listShopping);
+        }
 
         // POST: ListShopping/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit([Bind(Include = "shoppingListId,UserId,ListName,Color,CreatedUtc,ModifiedUtc")] ListShopping listShopping)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Entry(listShopping).State = EntityState.Modified;
-        //        db.SaveChanges();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(listShopping);
-        //}
+        [HttpPost]
+        public ActionResult Edit([Bind(Include = "shoppingListId,UserId,ListName,Color,CreatedUtc,ModifiedUtc")] ListShopping listShopping)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(listShopping).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(listShopping);
+        }
 
         // GET: ListShopping/Delete/5
-        //public ActionResult Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    ListShopping listShopping = db.ShoppingLists.Find(id);
-        //    if (listShopping == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(listShopping);
-        //}
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            ListShopping listShopping = db.ShoppingLists.Find(id);
+            if (listShopping == null)
+            {
+                return HttpNotFound();
+            }
+            return View(listShopping);
+        }
 
         // POST: ListShopping/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    ListShopping listShopping = db.ShoppingLists.Find(id);
-        //    db.ShoppingLists.Remove(listShopping);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            ListShopping listShopping = db.ShoppingLists.Find(id);
+            db.ShoppingLists.Remove(listShopping);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
 
     }
