@@ -21,8 +21,8 @@ namespace ShoppingList.Models
         public int shoppingListId { get; set; }
         public string ListContent { get; set; }
         public string NoteContent { get; set; }
-        public Priority? Priority { get; set; }
         public bool IsChecked { get; set; }
+        public Priority? Priority { get; set; }
 
             
        

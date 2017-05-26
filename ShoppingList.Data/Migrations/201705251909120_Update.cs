@@ -51,8 +51,8 @@ namespace ShoppingList.Data.Migrations
                         shoppingListId = c.Int(nullable: false),
                         ListContent = c.String(),
                         NoteContent = c.String(),
-                        Priority = c.Int(),
                         IsChecked = c.Boolean(nullable: false),
+                        Priority = c.Int(),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })

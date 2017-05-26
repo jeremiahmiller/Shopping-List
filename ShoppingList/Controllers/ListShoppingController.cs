@@ -128,7 +128,10 @@ namespace ShoppingList.Controllers
             return View(listShopping);
         }
 
-        // GET: ListShopping/Delete/5
+
+        // GET: ListShopping/Delete
+        //GET: ListShopping/Delete/5
+
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -143,7 +146,7 @@ namespace ShoppingList.Controllers
             return View(listShopping);
         }
 
-        // POST: ListShopping/Delete/5
+        //POST: ListShopping/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
