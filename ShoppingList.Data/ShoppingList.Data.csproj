@@ -91,13 +91,9 @@
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
     <Compile Include="ListInitializer.cs" />
-    <Compile Include="Migrations\201705251909120_Update.cs" />
-    <Compile Include="Migrations\201705251909120_Update.Designer.cs">
-      <DependentUpon>201705251909120_Update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705221431167_Models.cs" />
-    <Compile Include="Migrations\201705221431167_Models.Designer.cs">
-      <DependentUpon>201705221431167_Models.cs</DependentUpon>
+    <Compile Include="Migrations\201705261739583_backendUpdates.cs" />
+    <Compile Include="Migrations\201705261739583_backendUpdates.Designer.cs">
+      <DependentUpon>201705261739583_backendUpdates.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
@@ -106,11 +102,8 @@
     <Compile Include="ShoppingListItem.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705251909120_Update.resx">
-      <DependentUpon>201705251909120_Update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705221431167_Models.resx">
-      <DependentUpon>201705221431167_Models.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705261739583_backendUpdates.resx">
+      <DependentUpon>201705261739583_backendUpdates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
