@@ -10,8 +10,9 @@ namespace ShoppingList.Models
     {
         [Key]
         public int NoteId { get; set; }
+
         public int shoppingItemId { get; set; }
-        public string Bodu { get; set; }
+
        
         public string Body { get; set; }
       
