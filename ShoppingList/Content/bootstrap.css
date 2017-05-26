@@ -336,7 +336,7 @@ textarea {
 }
 
 a {
-  color: #428bca;
+  color: black;
   text-decoration: none;
 }
 
@@ -2051,7 +2051,7 @@ fieldset[disabled] .btn {
 
 .btn-default {
   color: black;
-  background-color: transparent;
+  background-color: rgba(255,255,255,0.5);
   border-color: transparent;
 }
 
@@ -4502,7 +4502,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #6fb6de;
+  background-color: white;
   border-color: transparent;
 }
 
@@ -4545,21 +4545,21 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse .navbar-toggle {
-  border-color: #333333;
+  border-color: transparent;
 }
 
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-  background-color: #333333;
+  background-color: white;
 }
 
 .navbar-inverse .navbar-toggle .icon-bar {
-  background-color: #ffffff;
+  background-color: black;
 }
 
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form {
-  border-color: #101010;
+  border-color: transparent;
 }
 
 .navbar-inverse .navbar-nav > .open > a,
@@ -4935,7 +4935,7 @@ a.list-group-item.active > .badge,
   font-weight: 200;
   line-height: 2.1428571435;
   color: black;
-  background-color: transparent;
+  background-color: rgba(255,255,255,0.5);
 }
 
 .jumbotron h1 {
@@ -5162,10 +5162,10 @@ a.thumbnail:focus {
 
 .progress.active .progress-bar {
   -webkit-animation: progress-bar-stripes 2s linear infinite;
-     -moz-animation: progress-bar-stripes 2s linear infinite;
-      -ms-animation: progress-bar-stripes 2s linear infinite;
-       -o-animation: progress-bar-stripes 2s linear infinite;
-          animation: progress-bar-stripes 2s linear infinite;
+  -moz-animation: progress-bar-stripes 2s linear infinite;
+  -ms-animation: progress-bar-stripes 2s linear infinite;
+  -o-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
 }
 
 .progress-bar-success {

@@ -6,9 +6,10 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<div class="btn btn-default">
+    @Html.ActionLink("Create New", "Create", new { id = ViewBag.id })
+</div>
+
 <table class="table">
     <tr>
         <th>
