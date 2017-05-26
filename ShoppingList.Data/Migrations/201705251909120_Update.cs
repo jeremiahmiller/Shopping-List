@@ -3,7 +3,7 @@ namespace ShoppingList.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class Update : DbMigration
     {
         public override void Up()
         {
@@ -14,8 +14,9 @@ namespace ShoppingList.Data.Migrations
                         NoteId = c.Int(nullable: false, identity: true),
                         shoppingItemId = c.Int(nullable: false),
                         Bodu = c.String(),
+                        Body = c.String(),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.NoteId);
             
@@ -49,10 +50,11 @@ namespace ShoppingList.Data.Migrations
                         shoppingItemId = c.Int(nullable: false, identity: true),
                         shoppingListId = c.Int(nullable: false),
                         ListContent = c.String(),
-                        Priority = c.Int(),
+                        NoteContent = c.String(),
                         IsChecked = c.Boolean(nullable: false),
+                        Priority = c.Int(),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.shoppingItemId);
             
@@ -65,7 +67,7 @@ namespace ShoppingList.Data.Migrations
                         ListName = c.String(nullable: false),
                         Color = c.String(),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
-                        ModifiedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
                 .PrimaryKey(t => t.shoppingListId);
             

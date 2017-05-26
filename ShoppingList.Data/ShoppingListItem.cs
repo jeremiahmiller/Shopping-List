@@ -11,8 +11,7 @@ namespace ShoppingList.Models
         {
             Low,
             Medium,
-            High,
-            
+            High, 
         };
 
     public class ShoppingListItem
@@ -29,10 +28,11 @@ namespace ShoppingList.Models
 
         [DefaultValue(false)]
         public bool IsChecked { get; set; }
+        public string NoteContent { get; set; }
 
         [Display(Name = "Creation Date")]
         public DateTimeOffset CreatedUtc { get; set; }
-
+        
         [Display(Name = "Edited Date")]
         public DateTimeOffset? ModifiedUtc { get; set; }
 
