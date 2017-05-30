@@ -52,7 +52,9 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.shoppingItemId }) |
+<p class="btn btn-default">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.shoppingItemId })
+</p> |
+<p class="btn btn-default">
     @Html.ActionLink("Back to List", "Index", new { id = Model.shoppingListId })
 </p>

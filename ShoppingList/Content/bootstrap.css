@@ -594,6 +594,7 @@ ol ol {
 
 dl {
   margin-bottom: 20px;
+  background-color: rgba(255,255,255,0.8);
 }
 
 dt,
@@ -709,6 +710,7 @@ address {
   margin-bottom: 20px;
   font-style: normal;
   line-height: 1.428571429;
+  background-color: rgba(255,255,255,0.8);
 }
 
 code,
@@ -1429,6 +1431,7 @@ th {
   line-height: 1.428571429;
   vertical-align: top;
   border-top: 1px solid #dddddd;
+  background-color: rgba(255,255,255,0.8);
 }
 
 .table thead > tr > th {
@@ -2001,7 +2004,8 @@ textarea.input-lg {
 .btn {
   display: inline-block;
   padding: 6px 12px;
-  margin-bottom: 0;
+  margin-top: 10px;
+  margin-bottom: 22px;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.428571429;
@@ -2051,7 +2055,7 @@ fieldset[disabled] .btn {
 
 .btn-default {
   color: black;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.8);
   border-color: transparent;
 }
 
@@ -4510,24 +4514,12 @@ textarea.input-group-sm > .input-group-btn > .btn {
   color: black;
 }
 
-.navbar-inverse .navbar-brand:hover,
-.navbar-inverse .navbar-brand:focus {
-  color: #ffffff;
-  background-color: transparent;
-}
-
 .navbar-inverse .navbar-text {
   color: #999999;
 }
 
 .navbar-inverse .navbar-nav > li > a {
   color: black;
-}
-
-.navbar-inverse .navbar-nav > li > a:hover,
-.navbar-inverse .navbar-nav > li > a:focus {
-  color: #ffffff;
-  background-color: transparent;
 }
 
 .navbar-inverse .navbar-nav > .active > a,
@@ -5327,7 +5319,6 @@ a.list-group-item:focus {
 
 .panel {
   margin-bottom: 20px;
-  background-color: rgba(255,255,255,0.8);
   border: 1px solid transparent;
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
@@ -5462,7 +5453,7 @@ a.list-group-item:focus {
 
 .panel-primary > .panel-heading {
   color: black;
-  background-color: white;
+  background-color: rgba(255,255,255,0.8);
   border-color: transparent;
 }
 

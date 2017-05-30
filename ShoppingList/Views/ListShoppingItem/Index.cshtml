@@ -20,9 +20,6 @@
                     <span class="glyphicon glyphicon-list"></span>@ViewBag.Title
                     <div class="pull-right action-buttons">
                         <div class="btn-group pull-right">
-                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                                <span class="glyphicon glyphicon-cog" style="margin-right: 0px;"></span>
-                            </button>
                             <ul class="dropdown-menu slidedown">
                                 <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-pencil"></span>Edit</a></li>
                                 <li><a href="http://www.jquery2dotnet.com"><span class="glyphicon glyphicon-trash"></span>Delete</a></li>
@@ -100,7 +97,7 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="btn btn-default">        
+    <div>      
         <a class="btn btn-default" href="@Url.Action("Delete", "ListShopping", new { id = ViewBag.id })">Delete</a>
     </div>
 }

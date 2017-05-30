@@ -10,6 +10,7 @@
 <div>
     <h4>ListShopping</h4>
     <hr />
+    
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.UserId)
@@ -58,7 +59,9 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <p class="btn btn-default">
+                @Html.ActionLink("Back to List", "Index")
+            </p>
         </div>
     }
 </div>
