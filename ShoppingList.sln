@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingList.Web", "ShoppingList\ShoppingList.Web.csproj", "{9A95CF95-3039-42FF-94B4-72585B789B4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingList.Data", "ShoppingList.Data\ShoppingList.Data.csproj", "{E544970E-15E1-4ABE-8A46-B2FE48644999}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingList.Services", "ShoppingList.Services\ShoppingList.Services.csproj", "{BD175ABD-DB76-45CB-B6BC-972421C5432C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A95CF95-3039-42FF-94B4-72585B789B4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A95CF95-3039-42FF-94B4-72585B789B4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A95CF95-3039-42FF-94B4-72585B789B4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A95CF95-3039-42FF-94B4-72585B789B4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E544970E-15E1-4ABE-8A46-B2FE48644999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E544970E-15E1-4ABE-8A46-B2FE48644999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E544970E-15E1-4ABE-8A46-B2FE48644999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E544970E-15E1-4ABE-8A46-B2FE48644999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD175ABD-DB76-45CB-B6BC-972421C5432C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD175ABD-DB76-45CB-B6BC-972421C5432C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD175ABD-DB76-45CB-B6BC-972421C5432C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD175ABD-DB76-45CB-B6BC-972421C5432C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
